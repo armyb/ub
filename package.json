@@ -1,6 +1,7 @@
 {
+  "name": "ub",
+  "version": "0.1.0",
   "private": true,
-  "homepage": "https://armyb.github.io/ub", 
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
@@ -8,6 +9,7 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
+  "homepage": "https://armyb.github.io/ub", 
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
