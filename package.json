@@ -9,7 +9,7 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "homepage": "https://armyb.github.io/ub", 
+  "homepage": "https://armyb.github.io/ub",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -32,5 +32,8 @@
     "react-dom": "^16.12.0",
     "umi": "^3.0.1",
     "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
