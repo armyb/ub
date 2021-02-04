@@ -7,7 +7,8 @@
     "build": "umi build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://armyb.github.io/ub",
   "gitHooks": {

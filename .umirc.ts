@@ -6,4 +6,5 @@ export default defineConfig({
   ],
   // outputPath: 'build',
   publicPath: 'https://armyb.github.io/ub/',
+  history:{ type:'hash' }
 });
