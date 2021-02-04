@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage": "https://armyb.github.io/ub", 
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
