@@ -1,8 +1,8 @@
 import React, { FC, Suspense, useEffect } from 'react';
 import { connect, Dispatch } from 'umi';
 import { Loading, DashboardState } from '@/models/connect';
-import PageLoading from './components/PageLoading';
-const VisitCard = React.lazy(() => import('./components/visitCard'));
+import PageLoading from './components/PageLoading/index';
+const VisitCard = React.lazy(() => import('./components/visitCard/index'));
 interface DashboardProps {
     dispatch: Dispatch;
     dashboard: DashboardState;
