@@ -20,11 +20,28 @@ const codeMessage = {
   504: '网关超时。',
 };
 
+type mapCode =
+  | 200
+  | 201
+  | 202
+  | 204
+  | 400
+  | 401
+  | 403
+  | 404
+  | 406
+  | 410
+  | 422
+  | 500
+  | 502
+  | 503
+  | 504;
+
 /** 异常处理程序 */
 const errorHandler = (error: { response: Response }): Response => {
   const { response } = error;
   if (response && response.status) {
-    const errorText = codeMessage[response.status] || response.statusText;
+    const errorText = codeMessage[response.status as mapCode] || response.statusText;
     const { status, url } = response;
 
     notification.error({

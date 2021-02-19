@@ -1,3 +1,5 @@
+import { Request, Response } from 'express';
+
 export default {
     // 支持值为 Object 和 Array
     'GET /api/users': { users: [1, 2] },
