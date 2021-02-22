@@ -1,25 +1,33 @@
 import { DashboardState } from './dashboard';
+import { LoginModelState } from './login';
 
-export { DashboardState };
+export { DashboardState,LoginModelState };
 
 export interface Loading {
-    global: boolean;
-    effects: { [key: string]: boolean | undefined };
-    models: {
-      global?: boolean;
-      menu?: boolean;
-      setting?: boolean;
-      user?: boolean;
-      login: boolean;
-      queryTable: boolean;
-      dashboard: boolean;
-    };
-  }
+  global: boolean;
+  effects: { [key: string]: boolean | undefined };
+  models: {
+    global?: boolean;
+    menu?: boolean;
+    setting?: boolean;
+    user?: boolean;
+    login: boolean;
+    queryTable: boolean;
+    dashboard: boolean;
+  };
+}
 
-  export interface ConnectState {
-    loading: Loading;
-  }
-  export interface Route {
-    routes?: Route[];
-  }
-  
+export interface ConnectState {
+  loading: Loading;
+  login:LoginModelState
+}
+export interface Route {
+  routes?: Route[];
+}
+
+export interface LoginUserInfoState {
+  id: string;
+  name: string;
+  role?: string;
+  [key: string]: any
+}

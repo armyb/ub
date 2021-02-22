@@ -5,5 +5,12 @@ export default [
         key: 'dashboard',
         icon: '',
         children: [],
+      },
+      {
+        title: 'Login',
+        link: '/login',
+        key: 'login',
+        icon: '',
+        children: [],
       }
 ]
