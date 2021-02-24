@@ -9,6 +9,7 @@ import {
 import { connect, Dispatch } from 'umi';
 import { LoginModelState, Loading } from '@/models/connect';
 
+import { SubmitValProps } from '../../index';
 const formItemLayout = {
     wrapperCol: { span: 24 },
 };
@@ -18,24 +19,33 @@ interface LoginFormProps {
     login: LoginModelState;
     loading: boolean;
 }
-const LoginForm: FC<LoginFormProps> = ({
+
+interface ParentProps {
+    onSubmit:(key:SubmitValProps) => void
+}
+
+const LoginForm: FC<LoginFormProps & ParentProps> = ({
     login,
     dispatch,
+    onSubmit,
     loading,
 }) => {
-    // const { isError } = login;
+    const onFinish = (values:any)=>{
+        onSubmit(values);
+    }
+    const { isError } = login;
     console.log("🚀 ~ file: index.tsx ~ line 27 ~ isError", login)
 
     return (
-        <Form name="validate_other" {...formItemLayout}>
-            {/* <div style={{ color: '#f5222d', marginBottom: 8, height: 26 }}>
+        <Form name="validate_other" {...formItemLayout} onFinish={onFinish}>
+            <div style={{ color: '#f5222d', marginBottom: 8, height: 26 }}>
                 {isError && (
                     <span>
                         <ExclamationCircleOutlined style={{ marginRight: 4 }} />
                     用户名或密码错误，请核对后重新输入
                     </span>
                 )}
-            </div> */}
+            </div>
             <Form.Item
                 name="username"
                 rules={[

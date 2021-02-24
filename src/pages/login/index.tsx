@@ -11,7 +11,21 @@ export interface LoginLayoutProps  {
     loading: boolean;
 }
 
+export interface SubmitValProps {
+    username:string,
+    password:string
+}
+
 const Login: FC<LoginLayoutProps> = ({dispatch})=>{
+    function handleSubmit(values:SubmitValProps){
+        dispatch({
+            type:'login/queryLogin',
+            payload:{
+                ...values
+            }
+        })
+        console.log("🚀 ~ file: index.tsx ~ line 21 ~ handleSubmit ~ values", values)
+    }
     return (
         <div className={styles.loginContainer}>
             <div className={styles.login}>
@@ -30,7 +44,7 @@ const Login: FC<LoginLayoutProps> = ({dispatch})=>{
                         </span>
                     </Col>
                     </Row>
-                    <LoginForm />
+                    <LoginForm onSubmit={handleSubmit} />
                 </div>
                 </div>
             </div>
