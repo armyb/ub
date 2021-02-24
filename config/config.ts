@@ -5,7 +5,8 @@ console.log("🚀 ~ file: .umirc.ts ~ line 4 ~ NODE_ENV", NODE_ENV)
 export default defineConfig({
   title: '管理平台业务1',
   // outputPath: 'build',
-  publicPath: NODE_ENV === 'development' ? './' : 'https://armyb.github.io/ub/',
+  // publicPath: NODE_ENV === 'development' ? './' : 'https://armyb.github.io/ub/',
+  publicPath:'./',
   hash: true,
   dva: {
     hmr: true,
@@ -18,7 +19,7 @@ export default defineConfig({
     type: 'none',
   },
   theme: {
-    '@primary-color': '#1DA57A',
+    '@primary-color': '#5f9df5',
   },
   history:{
     type:'hash'

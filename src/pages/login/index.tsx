@@ -38,7 +38,7 @@ const Login: FC<LoginLayoutProps> = ({dispatch})=>{
                         style={{ textAlign: 'center' }}
                     >
                         <span
-                        style={{ fontSize: 22, fontWeight: 600, color: '#1abc9c' }}
+                        style={{ fontSize: 22, fontWeight: 600, color: '#5f9df5' }}
                         >
                         前端数据管理平台
                         </span>
