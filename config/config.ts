@@ -20,6 +20,9 @@ export default defineConfig({
   theme: {
     '@primary-color': '#1DA57A',
   },
+  history:{
+    type:'hash'
+  },
   proxy: {
     '/api': {
       target: 'http://128.1.1.1:8000/',
