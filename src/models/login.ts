@@ -1,6 +1,6 @@
 import { Effect, Reducer, history } from 'umi';
 import { message } from 'antd';
-import { queryLogin } from '@/services/login';
+import { queryLogin,logout } from '@/services/login';
 import { ConnectState, LoginUserInfoState } from './connect.d';
 
 export interface LoginModelState {
@@ -13,6 +13,7 @@ export interface LoginModelType {
   state:LoginModelState,
   effects:{
     queryLogin: Effect;
+    logout:Effect
   },
   reducers:{
     save:Reducer<LoginModelState>
@@ -59,6 +60,18 @@ const LoginModel:LoginModelType = {
 
       }
       console.log("🚀 ~ file: login.ts ~ line 24 ~ *queryLogin ~ response", response)
+    },
+    *logout(_, { call }){
+      const response = yield call(logout)
+      console.log("🚀 ~ file: login.ts ~ line 66 ~ *logout ~ response", response)
+      if(response.status === 'ok'){
+        localStorage.removeItem('userid');
+        history.replace({
+          pathname: '/login',
+          search: `timestamp=${new Date().getTime()}`,
+        });
+      }
+     
     }
   },
   reducers: {

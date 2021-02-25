@@ -1,7 +1,8 @@
+import { GlobalModelState } from './global'
 import { DashboardState } from './dashboard';
 import { LoginModelState } from './login';
 
-export { DashboardState,LoginModelState };
+export {GlobalModelState, DashboardState,LoginModelState };
 
 export interface Loading {
   global: boolean;
@@ -23,6 +24,14 @@ export interface ConnectState {
 }
 export interface Route {
   routes?: Route[];
+}
+
+export interface MenusDate {
+  title: string;
+  link: string;
+  key: string;
+  icon: string;
+  children: any;
 }
 
 export interface LoginUserInfoState {
